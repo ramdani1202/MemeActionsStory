@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>APES CHRONICLES — RPG Meme Journey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Noise/grain overlay -->
+  <div class="grain-overlay"></div>
+
+  <!-- ============ SCREEN: TITLE ============ -->
+  <section id="screen-title" class="screen active">
+    <div class="sunset-bg"></div>
+    <div class="title-wrap">
+      <p class="eyebrow">SEBUAH RPG RECEH TENTANG HIDUP</p>
+      <h1 class="game-title">APES<span>CHRONICLES</span></h1>
+      <p class="subtitle">Kalahkan drama harian. Buka kenangan.</p>
+      <div class="title-actions">
+        <button class="btn btn-primary" id="btn-start">Mulai Petualangan</button>
+        <button class="btn btn-ghost" id="btn-gallery-title">Galeri Unlock</button>
+      </div>
+      <p class="hint">Progres tersimpan otomatis di perangkat ini</p>
+    </div>
+  </section>
+
+  <!-- ============ SCREEN: STORY ============ -->
+  <section id="screen-story" class="screen">
+    <div class="hud-top">
+      <div class="hero-chip">
+        <span class="hero-avatar">🧍</span>
+        <div class="hero-chip-info">
+          <span class="hero-name" id="hero-name-label"></span>
+          <div class="hp-bar-mini"><div class="hp-bar-mini-fill" id="hero-hp-mini"></div></div>
+        </div>
+      </div>
+      <button class="icon-btn" id="btn-gallery-story" title="Galeri">🖼️</button>
+    </div>
+
+    <div class="story-panel">
+      <p class="chapter-label" id="chapter-label"></p>
+      <div class="dialog-box" id="dialog-box"></div>
+      <div class="story-controls">
+        <button class="btn btn-primary" id="btn-next-line">Lanjut ▶</button>
+      </div>
+      <div class="choices-wrap" id="choices-wrap" hidden></div>
+    </div>
+  </section>
+
+  <!-- ============ SCREEN: BATTLE ============ -->
+  <section id="screen-battle" class="screen">
+    <div class="battle-bg"></div>
+
+    <div class="battle-arena">
+      <div class="combatant enemy-side">
+        <div class="combatant-name" id="enemy-name"></div>
+        <div class="hp-bar"><div class="hp-bar-fill enemy-fill" id="enemy-hp-fill"></div></div>
+        <div class="hp-text" id="enemy-hp-text"></div>
+        <div class="sprite enemy-sprite" id="enemy-sprite"></div>
+      </div>
+
+      <div class="vs-badge">VS</div>
+
+      <div class="combatant hero-side">
+        <div class="sprite hero-sprite">🧍</div>
+        <div class="combatant-name" id="hero-name-battle"></div>
+        <div class="hp-bar"><div class="hp-bar-fill hero-fill" id="hero-hp-fill"></div></div>
+        <div class="hp-text" id="hero-hp-text"></div>
+      </div>
+    </div>
+
+    <div class="battle-log" id="battle-log"></div>
+
+    <div class="skills-wrap" id="skills-wrap"></div>
+  </section>
+
+  <!-- ============ SCREEN: RESULT ============ -->
+  <section id="screen-result" class="screen">
+    <div class="result-card">
+      <div class="result-flash" id="result-flash"></div>
+      <p class="result-eyebrow" id="result-eyebrow">MENANG</p>
+      <h2 class="result-title" id="result-title">Kenangan Terbuka</h2>
+      <div class="photo-reveal" id="photo-reveal"></div>
+      <p class="photo-caption" id="photo-caption"></p>
+      <button class="btn btn-primary" id="btn-continue">Lanjutkan Cerita ▶</button>
+    </div>
+  </section>
+
+  <!-- ============ SCREEN: GALLERY ============ -->
+  <section id="screen-gallery" class="screen">
+    <div class="gallery-header">
+      <h2>Galeri Kenangan</h2>
+      <p id="gallery-progress"></p>
+      <button class="icon-btn" id="btn-close-gallery">✕</button>
+    </div>
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </section>
+
+  <!-- ============ SCREEN: ENDING ============ -->
+  <section id="screen-ending" class="screen">
+    <div class="sunset-bg"></div>
+    <div class="title-wrap">
+      <p class="eyebrow">TAMAT</p>
+      <h1 class="game-title">SELESAI<span>SUDAH</span></h1>
+      <p class="subtitle">Semua kenangan sudah terbuka. Terima kasih sudah bertahan hidup hari ini.</p>
+      <div class="title-actions">
+        <button class="btn btn-primary" id="btn-view-gallery-end">Lihat Semua Galeri</button>
+        <button class="btn btn-ghost" id="btn-restart">Main Lagi dari Awal</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo lightbox (dipakai oleh galeri) -->
+  <div class="lightbox" id="lightbox" hidden>
+    <div class="lightbox-inner">
+      <button class="icon-btn" id="btn-close-lightbox">✕</button>
+      <div class="lightbox-photo" id="lightbox-photo"></div>
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <script src="data/story.js"></script>
+  <script src="assets/js/game.js"></script>
+</body>
+</html>
